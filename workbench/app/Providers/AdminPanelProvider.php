@@ -57,7 +57,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->spa()
             ->plugins([
-                \Moox\Builder\ItemPlugin::make(),
+                \Moox\Category\CategoryPlugin::make(),
             ]);
     }
 }

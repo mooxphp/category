@@ -1,6 +1,6 @@
 {
-    "name": "moox/builder",
-    "description": "This template is used for generating all Moox packages.",
+    "name": "moox/category",
+    "description": "This is my package category",
     "keywords": [
         "Laravel",
         "Filament",
@@ -17,18 +17,20 @@
         }
     ],
     "require": {
-        "moox/core": "^2.1.6"
+        "moox/core": "^2.2.0",
+        "codewithdennis/filament-select-tree": "^3.1",
+        "kalnoy/nestedset": "^6.0"
     },
     "autoload": {
         "psr-4": {
-            "Moox\\Builder\\": "src",
-            "Moox\\Builder\\Database\\Factories\\": "database/factories"
+            "Moox\\Category\\": "src",
+            "Moox\\Category\\Database\\Factories\\": "database/factories"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Moox\\Builder\\BuilderServiceProvider"
+                "Moox\\Category\\CategoryServiceProvider"
             ]
         }
     },
@@ -43,8 +45,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Moox\\Builder\\Tests\\": "tests",
-            "Moox\\Builder\\Database\\Factories\\": "database/factories",
+            "Moox\\Category\\Tests\\": "tests",
+            "Moox\\Category\\Database\\Factories\\": "database/factories",
             "Workbench\\App\\": "workbench/app/",
             "Workbench\\Database\\Factories\\": "workbench/database/factories/",
             "Workbench\\Database\\Seeders\\": "workbench/database/seeders/"

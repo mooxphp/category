@@ -2,26 +2,26 @@
 
 declare(strict_types=1);
 
-namespace Moox\Builder;
+namespace Moox\Category;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
 use Filament\Support\Concerns\EvaluatesClosures;
-use Moox\Builder\Resources\ItemResource;
+use Moox\Category\Resources\CategoryResource;
 
-class ItemPlugin implements Plugin
+class CategoryPlugin implements Plugin
 {
     use EvaluatesClosures;
 
     public function getId(): string
     {
-        return 'builder';
+        return 'category';
     }
 
     public function register(Panel $panel): void
     {
         $panel->resources([
-            ItemResource::class,
+            CategoryResource::class,
         ]);
     }
 

@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Moox\Builder\Resources\ItemResource\Pages;
+namespace Moox\Category\Resources\CategoryResource\Pages;
 
 use Filament\Actions\EditAction;
 use Filament\Actions\RestoreAction;
 use Filament\Resources\Pages\ViewRecord;
 use Illuminate\Database\Eloquent\Model;
-use Moox\Builder\Resources\ItemResource;
+use Moox\Category\Resources\CategoryResource;
 
-class ViewItem extends ViewRecord
+class ViewCategory extends ViewRecord
 {
-    protected static string $resource = ItemResource::class;
+    protected static string $resource = CategoryResource::class;
 
     protected function getHeaderActions(): array
     {

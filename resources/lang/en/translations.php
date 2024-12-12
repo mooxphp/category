@@ -2,9 +2,7 @@
 
 return [
 
-    'keywords' => 'Keywords',
-    'builder' => 'Builder',
-    'item' => 'Item',
-    'items' => 'Items',
+    'category' => 'Category',
+    'categories' => 'Categories',
 
 ];

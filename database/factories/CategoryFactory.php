@@ -1,13 +1,13 @@
 <?php
 
-namespace Moox\Builder\Database\Factories;
+namespace Moox\Category\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Moox\Builder\Models\Item;
+use Moox\Category\Models\Category;
 
-class ItemFactory extends Factory
+class CategoryFactory extends Factory
 {
-    protected $model = Item::class;
+    protected $model = Category::class;
 
     /**
      * Define the model's default state.
