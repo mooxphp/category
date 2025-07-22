@@ -2,7 +2,6 @@
 
 namespace Moox\Category\Moox\Entities\Categories\Category\Forms;
 
-use Camya\Filament\Forms\Components\TitleWithSlugInput;
 use CodeWithDennis\FilamentSelectTree\SelectTree;
 use Filament\Forms\Components\ColorPicker;
 use Filament\Forms\Components\FileUpload;
@@ -11,6 +10,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Grid;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Validation\Rules\Unique;
+use Moox\Slug\Forms\Components\TitleWithSlugInput;
 
 class TaxonomyCreateForm
 {
