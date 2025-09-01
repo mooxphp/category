@@ -14,7 +14,9 @@ use Illuminate\Support\Facades\DB;
 use Kalnoy\Nestedset\NodeTrait;
 use Moox\Category\Database\Factories\CategoryFactory;
 use Moox\Core\Entities\Items\Draft\BaseDraftModel;
+use Moox\Media\Traits\HasMediaUsable;
 use Override;
+use Spatie\Image\Enums\Fit;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
@@ -44,6 +46,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 class Category extends BaseDraftModel implements HasMedia
 {
     use HasFactory;
+    use HasMediaUsable;
     use InteractsWithMedia;
     use NodeTrait;
     use SoftDeletes;
@@ -52,33 +55,44 @@ class Category extends BaseDraftModel implements HasMedia
 
     protected $keyType = 'int';
 
-    public $translatedAttributes = [
-        'title',
-        'status',
-        'slug',
-        'content',
-        'data',
-    ];
+    protected function getCustomTranslatedAttributes(): array
+    {
+        return [
+            'title',
+            'slug',
+            'permalink',
+            'description',
+            'content',
+            'author_id',
+            'author_type',
+        ];
+    }
 
     protected $fillable = [
+        'is_active',
         'color',
         'weight',
         'count',
-        'featured_image_url',
+        'image',
         'parent_id',
         'basedata',
+        'status',
+        'uuid',
+        'ulid',
+        'custom_properties',
+        'due_at',
     ];
 
     protected $casts = [
+        'is_active' => 'boolean',
         'weight' => 'integer',
         'count' => 'integer',
         'basedata' => 'json',
+        'due_at' => 'datetime',
+        'uuid' => 'string',
+        'ulid' => 'string',
+        'custom_properties' => 'json',
     ];
-
-    public function getStatusAttribute(): string
-    {
-        return $this->trashed() ? 'deleted' : 'active';
-    }
 
     protected static function newFactory()
     {
